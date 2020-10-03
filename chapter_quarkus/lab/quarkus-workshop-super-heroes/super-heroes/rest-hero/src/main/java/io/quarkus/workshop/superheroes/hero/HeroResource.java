@@ -19,6 +19,10 @@ import java.util.List;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 
+import org.eclipse.microprofile.metrics.MetricUnits;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Timed;
+
 @Path("/api/heroes")
 @Produces(APPLICATION_JSON)
 public class HeroResource {
@@ -30,6 +34,8 @@ public class HeroResource {
 
 @Operation(summary = "Returns a random hero")
 @APIResponse(responseCode = "200", content = @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Hero.class, required = true)))
+@Counted(name = "countGetRandomHero", description = "Counts how many times the getRandomHero method has been invoked")
+@Timed(name = "timeGetRandomHero", description = "Times how long it takes to invoke the getRandomHero method", unit = MetricUnits.MILLISECONDS)
 @GET
 @Path("/random")
 public Response getRandomHero() {

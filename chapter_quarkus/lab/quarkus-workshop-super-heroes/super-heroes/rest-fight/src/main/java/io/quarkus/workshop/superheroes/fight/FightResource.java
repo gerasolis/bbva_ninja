@@ -1,8 +1,8 @@
 package io.quarkus.workshop.superheroes.fight;
 
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
 import org.eclipse.microprofile.faulttolerance.Timeout;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -10,6 +10,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
 import javax.inject.Inject;
@@ -37,11 +38,17 @@ public class FightResource {
     FightService service;
 
 
+@ConfigProperty(name = "process.milliseconds", defaultValue="0")
+long tooManyMilliseconds;
 
-
+private void veryLongProcess() throws InterruptedException {
+    Thread.sleep(tooManyMilliseconds);
+}
 
 @Operation(summary = "Returns two random fighters")
 @APIResponse(responseCode = "200", content = @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Fighters.class, required = true)))
+@Timeout(25000)
+@CircuitBreaker(requestVolumeThreshold = 4, failureRatio = 0.75, delay = 5000)
 @GET
 @Path("/randomfighters")
 public Response getRandomFighters() throws InterruptedException {

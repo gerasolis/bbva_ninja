@@ -1,0 +1,7 @@
+/projects/bbva_ninja/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/VillainResource.java
+/projects/bbva_ninja/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/Villain.java
+/projects/bbva_ninja/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/VillainApplication.java
+/projects/bbva_ninja/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/VillainService.java
+/projects/bbva_ninja/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/VillainApplicationLifeCycle.java
+/projects/bbva_ninja/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/health/DatabaseConnectionHealthCheck.java
+/projects/bbva_ninja/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/health/PingVillainResourceHealthCheck.java
