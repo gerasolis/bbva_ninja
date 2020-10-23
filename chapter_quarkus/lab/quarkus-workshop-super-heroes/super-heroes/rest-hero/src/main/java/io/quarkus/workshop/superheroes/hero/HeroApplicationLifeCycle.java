@@ -19,7 +19,7 @@ class HeroApplicationLifeCycle {
     LOGGER.info(" | |_| |/ _ \\ '__/ _ \\     / _ \\ | |_) | | ");
     LOGGER.info(" |  _  |  __/ | | (_) |   / ___ \\|  __/| | ");
     LOGGER.info(" |_| |_|\\___|_|  \\___/   /_/   \\_\\_|  |___|");
-    LOGGER.info("                         Powered by Quarkus");
+    LOGGER.info("                         Powered by BBVA - Ninja Project");
     LOGGER.infof("The application HERO is starting with profile `%s`", ProfileManager.getActiveProfile());
 }
 

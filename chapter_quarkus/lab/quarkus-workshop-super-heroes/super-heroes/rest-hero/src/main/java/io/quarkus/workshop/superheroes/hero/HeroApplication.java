@@ -17,7 +17,8 @@ import javax.ws.rs.core.Application;
         version = "1.0",
         contact = @Contact(name = "Quarkus", url = "https://github.com/ocp4labs/do292/tree/master/chapter_quarkus")),
     servers = {
-        @Server(url = "https://routell7t02hd-anademcz-che.8a09.starter-us-east-2.openshiftapps.com")
+        //@Server(url = "https://routell7t02hd-anademcz-che.8a09.starter-us-east-2.openshiftapps.com")
+        @Server(url = "https://route3s0g0unn-emsya-che.b542.starter-us-east-2a.openshiftapps.com")
     },
     externalDocs = @ExternalDocumentation(url = "https://github.com/ocp4labs/do292/tree/master/chapter_quarkus", description = "All the Quarkus workshops"),
     tags = {
